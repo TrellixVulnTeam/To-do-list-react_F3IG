@@ -28,6 +28,18 @@
 
     align-items: center;
     position: relative;
+    .search {
+      margin-top: 0.5rem;
+      width: calc(100% - 40px);
+      padding: 0 20px;
+      input {
+        width: calc(100% - 0.6rem);
+        border: 1px solid #cbcbcb;
+        border-radius: 5px;
+        outline: none;
+        padding: 0 0.3rem;
+      }
+    }
     &-btns {
       width: 100%;
       display: flex;
@@ -38,28 +50,56 @@
         align-items: center;
         justify-content: center;
         padding: 20px;
-        border-radius: 10px 10px 0px 0px;
+        background-color: #fafafa;
         outline: none;
+        color: #cbcbcb;
         border: none;
-        background-color: white;
+        border-bottom: 2px solid #f5f5f5;
         font-size: 1.5rem;
         cursor: pointer;
         &:first-child {
           border-right: 2px solid #f5f5f5;
+          border-radius: 10px 0px 0px 0px;
         }
+        &:last-child {
+          border-radius: 0px 10px 0px 0px;
+        }
+      }
+      .btn--active {
+        background-color: white;
+        border-bottom: none;
+        color: #b296be;
       }
     }
     &-items {
       display: flex;
       flex-direction: column;
       padding: 20px;
-      width: 100%;
+      width: calc(100% - 40px);
+      overflow: auto;
+      &::-webkit-scrollbar {
+        width: 10px;
+      }
+
+      &::-webkit-scrollbar-track {
+        background: #f1f1f1;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background: #b296be;
+        border-radius: 20px;
+      }
+
+      &::-webkit-scrollbar-thumb:hover {
+        background: #b296be;
+      }
     }
     &-item {
       display: flex;
-      width: calc(100% - 40px);
+      width: calc(100% - 20px);
+
       align-items: center;
-      padding: 10px 20px;
+      padding: 10px 10px;
       position: relative;
 
       &:hover {
@@ -73,7 +113,7 @@
           color: #b296be;
           font-size: 1.2rem;
           position: absolute;
-          right: 20px;
+          right: 0;
           cursor: pointer;
           transition: 0.3s all;
           &:hover {
@@ -81,7 +121,8 @@
           }
         }
       }
-      .is-done-checkbox {
+      .is-done-checkbox,
+      .is-done-checkbox--active {
         border: 2px solid #ececec;
         width: 15px;
         height: 18px;
@@ -89,13 +130,54 @@
         margin-right: 1rem;
         cursor: pointer;
         transition: 0.3s all;
+        color: #b296be;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
         &:hover {
           transform: scale(0.9);
           border: 2px solid #b296be;
         }
+        &--active {
+          i {
+            opacity: 1;
+          }
+        }
+      }
+      .is-done-checkbox {
+        i {
+          opacity: 0;
+        }
       }
       .title {
         color: #b3b3b3;
+      }
+
+      .title,
+      .done {
+        overflow: auto;
+        width: calc(100% - 3rem);
+        &::-webkit-scrollbar {
+          width: 10px;
+        }
+
+        &::-webkit-scrollbar-track {
+          background: #f1f1f1;
+        }
+
+        &::-webkit-scrollbar-thumb {
+          background: #b296be;
+          border-radius: 20px;
+        }
+
+        &::-webkit-scrollbar-thumb:hover {
+          background: #b296be;
+        }
+      }
+      .done {
+        color: #ececec;
+        text-decoration: line-through;
       }
       button {
         display: none;

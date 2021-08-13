@@ -3,6 +3,7 @@ import { BrowserRouter as Router, useHistory } from "react-router-dom";
 
 export const ToDoListForm = ({ thingsToDo, setToDo }) => {
   const [title, setTitle] = useState("");
+
   const history = useHistory();
 
   const handleTitleInput = (e) => {
@@ -14,7 +15,7 @@ export const ToDoListForm = ({ thingsToDo, setToDo }) => {
   };
 
   const addToDo = () => {
-    setToDo([...thingsToDo, title]);
+    setToDo([...thingsToDo, { title, isCheck: false }]);
     history.push("/");
   };
 
