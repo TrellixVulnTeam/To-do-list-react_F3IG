@@ -1,0 +1,87 @@
+@import "boxicons";
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+.App {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(
+    90deg,
+    rgba(251, 190, 194, 1) 35%,
+    rgba(171, 125, 200, 1) 100%
+  );
+  .to-do-list {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    height: 600px;
+    background-color: white;
+    box-shadow: 0 0 15px rgba(#000, 0.2);
+    border-radius: 10px;
+  }
+  .to-do-list-form {
+    display: flex;
+    width: calc(300px - 40px);
+    height: calc(300px - 40px);
+    flex-direction: column;
+    box-shadow: 0 0 15px rgba(#000, 0.2);
+    background-color: white;
+    padding: 20px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    input {
+      outline: none;
+      height: 40px;
+      padding: 0 0.3rem;
+      border: 1px solid #fdb974;
+      border-radius: 10px;
+      //   margin-bottom: 1rem;
+      width: calc(100% - 20px - 0.6rem);
+      color: #fdb874c0;
+      &::placeholder {
+        color: #fdb874c0;
+      }
+    }
+    .btns {
+      display: flex;
+      width: 100%;
+      align-items: center;
+      justify-content: center;
+      margin-top: 2rem;
+      button {
+        display: flex;
+        flex-basis: calc(50% - 1rem);
+        align-items: center;
+        justify-content: center;
+        background-color: #fdb974;
+        border: none;
+        padding: 10px;
+
+        border-radius: 10px;
+        color: white;
+        font-size: 1.3rem;
+        transition: 0.3s all;
+        cursor: pointer;
+        &:first-child {
+          margin-right: 1rem;
+        }
+        &:last-child {
+          background-color: white;
+          color: #fdb974;
+          border: 1px solid #fdb974;
+        }
+        &:hover {
+          transform: scale(0.9);
+        }
+      }
+    }
+  }
+}
