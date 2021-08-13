@@ -25,6 +25,106 @@
     background-color: white;
     box-shadow: 0 0 15px rgba(#000, 0.2);
     border-radius: 10px;
+
+    align-items: center;
+    position: relative;
+    &-btns {
+      width: 100%;
+      display: flex;
+      border-radius: 10px 10px 0px 0px;
+      button {
+        flex-basis: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        border-radius: 10px 10px 0px 0px;
+        outline: none;
+        border: none;
+        background-color: white;
+        font-size: 1.5rem;
+        cursor: pointer;
+        &:first-child {
+          border-right: 2px solid #f5f5f5;
+        }
+      }
+    }
+    &-items {
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+      width: 100%;
+    }
+    &-item {
+      display: flex;
+      width: calc(100% - 40px);
+      align-items: center;
+      padding: 10px 20px;
+      position: relative;
+
+      &:hover {
+        button {
+          display: flex;
+          background-color: transparent;
+          align-items: center;
+          justify-content: center;
+          border: none;
+          outline: none;
+          color: #b296be;
+          font-size: 1.2rem;
+          position: absolute;
+          right: 20px;
+          cursor: pointer;
+          transition: 0.3s all;
+          &:hover {
+            transform: scale(0.9);
+          }
+        }
+      }
+      .is-done-checkbox {
+        border: 2px solid #ececec;
+        width: 15px;
+        height: 18px;
+        border-radius: 5px;
+        margin-right: 1rem;
+        cursor: pointer;
+        transition: 0.3s all;
+        &:hover {
+          transform: scale(0.9);
+          border: 2px solid #b296be;
+        }
+      }
+      .title {
+        color: #b3b3b3;
+      }
+      button {
+        display: none;
+        transition: 0.3s all;
+      }
+    }
+    .round-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px;
+      background-color: #fdb974;
+      color: white;
+      border-radius: 50%;
+      outline: none;
+      cursor: pointer;
+      border: none;
+      width: 60px;
+      height: 60px;
+      position: absolute;
+      box-shadow: 0 0 20px rgba(#000, 0.2);
+      transition: 0.3s all;
+      bottom: -25px;
+      left: 41%;
+      font-size: 1.2rem;
+      &:hover {
+        transform: scale(0.9);
+      }
+    }
   }
   .to-do-list-form {
     display: flex;
@@ -43,7 +143,6 @@
       padding: 0 0.3rem;
       border: 1px solid #fdb974;
       border-radius: 10px;
-      //   margin-bottom: 1rem;
       width: calc(100% - 20px - 0.6rem);
       color: #fdb874c0;
       &::placeholder {
